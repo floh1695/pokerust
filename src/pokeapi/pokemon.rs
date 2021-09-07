@@ -187,6 +187,14 @@ pub struct NaturePokeathlonStatAffect {
     pub nature: NamedAPIResource<Nature>,
 }
 
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct PastType {
+    pub generation: NamedAPIResource<Generation>,
+    pub types: NamedAPIResourceList<PokemonType>,
+}
+
 /// <https://pokeapi.co/docs/v2.html#pokemon>
 #[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
@@ -209,6 +217,7 @@ pub struct Pokemon {
     pub species: NamedAPIResource<PokemonSpecies>,
     pub stats: Vec<PokemonStat>,
     pub types: Vec<PokemonType>,
+    pub past_types: Vec<PastType>,
 }
 
 impl Pokemon {
