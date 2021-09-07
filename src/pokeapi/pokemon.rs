@@ -313,6 +313,102 @@ pub struct OtherPokemonSprites {
     official_artwork: Option<OtherPokemonSprite>,
 }
 
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationIVersionSprites {
+    #[serde(rename = "red-blue")]
+    red_blue: PokemonFormSprites,
+    yellow: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationIIVersionSprites {
+    crystal: PokemonFormSprites,
+    gold: PokemonFormSprites,
+    silver: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationIIIVersionSprites {
+    emerald: PokemonFormSprites,
+    #[serde(rename = "firered-leafgreen")]
+    firered_leafgreen: PokemonFormSprites,
+    #[serde(rename = "ruby-sapphire")]
+    ruby_sapphire: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationIVVersionSprites {
+    #[serde(rename = "diamond-pearl")]
+    diamond_pearl: PokemonFormSprites,
+    #[serde(rename = "heartgold-soulsilver")]
+    heartgold_soulsilver: PokemonFormSprites,
+    platinum: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationVVersionSprites {
+    #[serde(rename = "black-white")]
+    black_white: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationVIVersionSprites {
+    #[serde(rename = "omegaruby-alphasapphire")]
+    omegaruby_alphasapphire: PokemonFormSprites,
+    #[serde(rename = "x-y")]
+    x_y: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationVIIVersionSprites {
+    icons: PokemonFormSprites,
+    #[serde(rename = "ultra-sun-ultra-moon")]
+    ultra_sun_ultra_moon: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct GenerationVIIIVersionSprites {
+    icons: PokemonFormSprites,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct VersionPokemonSprites {
+    #[serde(rename = "generation-i")]
+    generation_i: GenerationIVersionSprites,
+    #[serde(rename = "generation-ii")]
+    generation_ii: GenerationIIVersionSprites,
+    #[serde(rename = "generation-iii")]
+    generation_iii: GenerationIIIVersionSprites,
+    #[serde(rename = "generation-iv")]
+    generation_iv: GenerationIVVersionSprites,
+    #[serde(rename = "generation-v")]
+    generation_v: GenerationVVersionSprites,
+    #[serde(rename = "generation-vi")]
+    generation_vi: GenerationVIVersionSprites,
+    #[serde(rename = "generation-vii")]
+    generation_vii: GenerationVIIVersionSprites,
+    #[serde(rename = "generation-viii")]
+    generation_viii: GenerationVIIIVersionSprites,
+}
+
 /// <https://pokeapi.co/docs/v2.html#pokemonsprites>
 #[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
@@ -327,6 +423,7 @@ pub struct PokemonSprites {
     pub back_female: Option<String>,
     pub back_shiny_female: Option<String>,
     pub other: Option<OtherPokemonSprites>,
+    pub versions: Option<VersionPokemonSprites>,
 }
 
 /// <https://pokeapi.co/docs/v2.html#locationareaencounter>
@@ -378,6 +475,25 @@ pub struct PokemonFormSprites {
     pub front_shiny: Option<String>,
     pub back_default: Option<String>,
     pub back_shiny: Option<String>,
+    pub front_female: Option<String>,
+    pub front_shiny_female: Option<String>,
+    pub back_female: Option<String>,
+    pub back_shiny_female: Option<String>,
+    pub animated: Option<AnimatedPokemonFormSprites>,
+}
+
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub struct AnimatedPokemonFormSprites {
+    pub front_default: Option<String>,
+    pub front_shiny: Option<String>,
+    pub back_default: Option<String>,
+    pub back_shiny: Option<String>,
+    pub front_female: Option<String>,
+    pub front_shiny_female: Option<String>,
+    pub back_female: Option<String>,
+    pub back_shiny_female: Option<String>,
 }
 
 /// <https://pokeapi.co/docs/v2.html#pokemon-habitats>
