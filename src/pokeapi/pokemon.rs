@@ -479,6 +479,8 @@ pub struct PokemonFormSprites {
     pub front_shiny_female: Option<String>,
     pub back_female: Option<String>,
     pub back_shiny_female: Option<String>,
+    pub front_gray: Option<String>,
+    pub back_gray: Option<String>,
     pub animated: Option<AnimatedPokemonFormSprites>,
 }
 
