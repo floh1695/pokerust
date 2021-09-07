@@ -296,6 +296,16 @@ pub struct PokemonStat {
     pub base_stat: u8,
 }
 
+pub struct OtherPokemonSprite {
+    front_default: String,
+    front_female: Option<String>,
+}
+
+pub struct OtherPokemonSprites {
+    dream_world: Option<OtherPokemonSprite>,
+    official_artwork: Option<OtherPokemonSprite>,
+}
+
 /// <https://pokeapi.co/docs/v2.html#pokemonsprites>
 #[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
@@ -309,6 +319,7 @@ pub struct PokemonSprites {
     pub back_shiny: Option<String>,
     pub back_female: Option<String>,
     pub back_shiny_female: Option<String>,
+    pub other: Option<OtherPokemonSprites>,
 }
 
 /// <https://pokeapi.co/docs/v2.html#locationareaencounter>
