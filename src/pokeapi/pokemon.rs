@@ -296,13 +296,20 @@ pub struct PokemonStat {
     pub base_stat: u8,
 }
 
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
 pub struct OtherPokemonSprite {
     front_default: String,
     front_female: Option<String>,
 }
 
+#[cfg_attr(debug_assertions, serde(deny_unknown_fields))]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
 pub struct OtherPokemonSprites {
     dream_world: Option<OtherPokemonSprite>,
+    #[serde(rename = "official-artwork")]
     official_artwork: Option<OtherPokemonSprite>,
 }
 
