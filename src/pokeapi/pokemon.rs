@@ -300,7 +300,7 @@ pub struct PokemonStat {
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Hash)]
 #[non_exhaustive]
 pub struct OtherPokemonSprite {
-    front_default: String,
+    front_default: Option<String>,
     front_female: Option<String>,
 }
 
