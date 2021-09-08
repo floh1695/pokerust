@@ -205,7 +205,7 @@ pub struct Pokemon {
     pub base_experience: u16,
     pub height: u8,
     pub is_default: bool,
-    pub order: u16,
+    pub order: i32,
     pub weight: u16,
     pub abilities: Vec<PokemonAbility>,
     pub forms: Vec<NamedAPIResource<PokemonForm>>,
