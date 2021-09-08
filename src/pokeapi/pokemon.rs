@@ -192,7 +192,7 @@ pub struct NaturePokeathlonStatAffect {
 #[non_exhaustive]
 pub struct PastType {
     pub generation: NamedAPIResource<Generation>,
-    pub types: NamedAPIResourceList<PokemonType>,
+    pub types: Vec<PokemonType>,
 }
 
 /// <https://pokeapi.co/docs/v2.html#pokemon>
