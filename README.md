@@ -1,3 +1,6 @@
+# NOTICE!
+Leaving the rest of the readme the same for now. There were some type issues with the records coming back from PokeAPI so I corrected some of those related to a project I'm working on.
+
 # Pokérust
 
 [![Crates.io](https://img.shields.io/crates/v/pokerust?style=flat-square)](https://crates.io/crates/pokerust)
